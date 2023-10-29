@@ -8,3 +8,7 @@ variable "key_name" {
   description = "Name of keypair used for SSH connections to EC2"
 }
 
+variable "go_version" {
+  type        = string
+  description = "Version of golang to use to run hugo"
+}

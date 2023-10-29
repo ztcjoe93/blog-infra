@@ -28,6 +28,9 @@ resource "aws_instance" "this" {
   ami           = data.aws_ami.latest.id
   instance_type = var.instance_type
   key_name      = var.key_name
+  user_data = templatefile("${path.module}/user_data.sh", {
+    go_version = var.go_version
+  })
 
   tags = {
     Name      = "twc-ec2"
